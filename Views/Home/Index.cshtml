@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<center>
+    <div class="row" style="position: relative">
+        <div class="col-md-12">
+            <h2>Create New Offer</h2>
+        </div>
+    </div>
+</center>
+
+<br/>
+
+<div style="width: 50%; margin: auto;">
+    <form action="/Home/Add" method="post">
+        <div class="form-group">
+            <label for="ID">Offer ID</label>
+            <input type="text" class="form-control" disabled="disabled" id="ID" name="ID" />
+        </div>
+        <div class="form-group">
+            <label for="Title">Title</label>
+            <input type="text" class="form-control" disabled="disabled" id="Title" name="Title" />
+        </div>
+        <div class="form-group">
+            <label for="Total">Total</label>
+            <input type="text" class="form-control" disabled="disabled" id="Total" name="Total" />
+        </div>
+        <div class="form-group">
+            <label for="Reference">Reference</label>
+            <input type="text" class="form-control" disabled="disabled" id="Reference" name="Reference" />
+        </div>
+        <div style="text-align:center;">
+            <button type="submit" class="btn btn-primary" style="width:200px;" disabled="disabled">Add</button>
+        </div>
+    </form>
+    <br />
+
+    @if (!String.IsNullOrEmpty(ViewBag.Error))
+    {
+        <div class="alert alert-danger" style="position:absolute; top:10px; right:10px;" role="alert">@ViewBag.Error</div>
+    }
+    else
+    {
+        <div class="alert alert-success" style="position:absolute; top:10px; right:10px;" role="alert">@ViewBag.Result</div>
+    }
+
+</div>
